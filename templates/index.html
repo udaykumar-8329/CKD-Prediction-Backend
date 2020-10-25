@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Page Title -->
+    <title>Medino</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for
+('static', filename='assets/images/logo/favicon.png') }}" type="image/x-icon">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/animate-3.7.0.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/font-awesome-4.7.0.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/bootstrap-4.1.3.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/owl-carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/jquery.datetimepicker.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/linearicons.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/style.css')}}">
+</head>
+<body>
+    <!-- Preloader Starts -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Header Area Starts -->
+    <header class="header-area">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 d-md-flex">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="social-links">
+                            <ul>
+                                <li><i class="fa fa-facebook"></i></li>
+                                <li><i class="fa fa-linkedin"></i></li>
+                                <li><i class="fa fa-twitter"></i></li>
+                                <li><i class="fa fa-instagram"></i></li>
+                                <li><i class="fa fa-vimeo"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="header" id="home">
+            <div class="container">
+                <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                   <a href="{{url_for('index')}}"><img src="{{url_for('static',filename='assets/images/logo/logo.png')}}" /></a>
+                </div>
+                <nav id="nav-menu-container">
+                    
+                </nav><!-- #nav-menu-container -->		    		
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <!-- Banner Area Starts -->
+    <section class="banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h4>Caring for better life</h4>
+                    <h1>Leading the way in medical excellence</h1>
+                    <p>Earth greater grass for good. Place for divide evening yielding them that. Creeping beginning over gathered brought.</p>
+                    <a href="{{url_for('form')}}" class="template-btn mt-3">CKD prediction</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Area End -->
+
+    
+
+    <!-- Javascript -->
+    <script src="{{url_for('static',filename='assets/js/vendor/jquery-2.2.4.min.js')}}"></script>
+	<script src="{{url_for('static',filename='assets/js/vendor/bootstrap-4.1.3.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/vendor/wow.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/vendor/owl-carousel.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/vendor/jquery.datetimepicker.full.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/vendor/jquery.nice-select.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/vendor/superfish.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+
+</body>
+</html>

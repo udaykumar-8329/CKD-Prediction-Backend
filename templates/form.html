@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Medino</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{url_for('static',filename='fonts/material-icon/css/material-design-iconic-font.min.css')}}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+	
+	 <!-- Favicon -->
+    <link rel="shortcut icon" href="{{url_for('static',filename='assets/images/logo/favicon.png')}}" type="image/x-icon">
+
+<style type="text/css">
+td
+{
+    padding:0 25px;
+}
+    .auto-style1 {
+        width: 770px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -o-border-radius: 10px;
+        -ms-border-radius: 10px;
+        max-width: 100%;
+        margin: 0 auto;
+        background: #fff;
+    }
+    .auto-style2 {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 55px;
+        left: 2px;
+        top: 35px;
+    }
+    .auto-style3 {
+        border-style: none;
+        border-color: inherit;
+        border-width: medium;
+        width: 243px;
+        background: #4966b1;
+        color: #fff;
+        padding: 16px 17px;
+        font-size: 13px;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+        -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+        -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+        -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+        -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+        margin-left: 193px;
+    }
+</style>
+
+
+</head>
+<body>
+
+<!-- Preloader Starts -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Preloader End -->
+
+   
+    
+    <div class="main">
+
+        <div class="auto-style1">
+            <form action="{{ url_for('predict')}}"method="post" class="appointment-form">
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; chronic kidney disease prediction</h2>
+              <!--  <div class="form-group-1" width="700px">-->
+				<table width="650px">
+				<tr>
+                    <td><input type="number" name="Age" id="Age" placeholder="Age" required /></td></hr>
+                    <td><input type="number" step="any" name="Blood Pressure" id="bp" placeholder="Blood Pressure" required /></td>
+                    <td><input type="number" step="any" name="Specific Gravity" id="sg" placeholder="Specific Gravity" required /></td>
+				</tr>
+				<tr>
+                    <td><input type="number" step="any" name="Albumin" id="al" placeholder="Albumin" required /></td>
+					<td><input type="number" step="any" name="Sugar" id="su" placeholder="Sugar" required /></td>
+                    <td><div class="auto-style2">
+                        <select name="rbc" id="rbc">
+                            <option slected value="">Red Blood Cell</option>
+                            <option value=0>normal</option>
+                            <option value=1>abnormal</option>
+                        </select>
+                    </div></td>
+				</tr>
+				<tr>
+					<td><div class="select-list">
+                        <select name="pc" id="pc">
+                            <option slected value="">Pus Cell</option>
+                            <option value=0>normal</option>
+                            <option value=1>abnormal</option>
+                        </select>
+                    </div></td>
+					<td><div class="select-list">
+                        <select name="pcc" id="pcc">
+                            <option slected value="">Pus Cell Clumps</option>
+                            <option value=1>present</option>
+                            <option value=0>notpresent</option>
+                        </select>
+                    </div></td>
+					<td><div class="select-list">
+                        <select name="bac" id="bac">
+                            <option slected value="">Bacteria</option>
+                            <option value=1>present</option>
+                            <option value=0>notpresent</option>
+                        </select>
+                    </div></td>
+				</tr>
+				<tr>
+					<td><input type="number" step="any" name="Blood Glucose Random" id="bgr" placeholder="Blood Glucose Random" required /></td>
+					<td><input type="number" step="any" name="Blood Urea" id="bu" placeholder="Blood Urea" required /></td>
+					<td><input type="number" step="any" name="Serum Createinine" id="sc" placeholder="Serum Createinine" required /></td>
+				</tr>
+				<tr>
+					<td><input type="number" step="any" name="Sodium" id="so" placeholder="Sodium" required /></td>
+					<td><input type="number" step="any" name="Potassium" id="po" placeholder="Potassium" required /></td>
+					<td><input type="number" step="any" name="Hemoglobin" id="hemo" placeholder="Hemoglobin" required /></td>
+				</tr>
+				<tr>
+					<td><input type="number" step="any" name="Packed Cell Volume" id="pcv" placeholder="Packed Cell Volume" required /></td>
+					<td><input type="number" step="any" name="White Blood Cells Count" id="wbcc" placeholder="white Blood Cells Count" required /></td>
+					<td><input type="number" step="any" name="Red Blood Cells Count" id="rbcc" placeholder="Red Blood Cells Count" required /></td>
+				</tr>
+				<tr>
+					<td><div class="select-list">
+                        <select name="hptn" id="hptn">
+                            <option slected value="">Hypertension</option>
+                            <option value=1>yes</option>
+                            <option value=0>no</option>
+                        </select>
+                    </div></td>
+					<td><div class="select-list">
+                        <select name="dm" id="dm">
+                            <option slected value="">Diadates Mellitus</option>
+                            <option value=1>yes</option>
+                            <option value=0>no</option>
+                        </select>
+                    </div></td>
+					<td><div class="select-list">
+                        <select name="cad" id="cad">
+                            <option slected value="">Coronary Artery Disease</option>
+                            <option value=1>yes</option>
+                            <option value=0>no</option>
+                        </select>
+                    </div></td>
+				</tr>
+				<tr>
+					<td><div class="select-list">
+                        <select name="ap" id="ap">
+                            <option slected value="">Appetite</option>
+                            <option value=1>good</option>
+                            <option value=0>poor</option>
+                        </select>
+                    </div></td>
+					<td><div class="select-list">
+                        <select name="pe" id="pe">
+                            <option slected value="">Pedal Edema</option>
+                            <option value=1>yes</option>
+                            <option value=0>no</option>
+                        </select>
+                    </div></td>
+					<td><div class="select-list">
+                        <select name="ane" id="ane">
+                            <option slected value="">Anemia</option>
+                            <option value=1>yes</option>
+                            <option value=0>no</option>
+                        </select>
+                    </div></td>
+				</tr>
+				</table>
+             <!--   </div> -->
+                <div class="form-submit">
+                    <button type="submit" id="submit" class="auto-style3" value="submit" onclick="result()">SUBMIT</button>
+                </div>
+                <h3>{{ prediction_text }}</h3>
+            </form>
+        </div> 
+
+    <</div>
+
+
+
+    <!-- JS -->
+    <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/main.js')}}"></script>
+
+</body>
+</html>
